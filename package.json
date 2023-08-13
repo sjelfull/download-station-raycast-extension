@@ -1,0 +1,64 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "download-station",
+  "title": "Download Station",
+  "description": "Synology Download Station integration",
+  "icon": "command-icon.png",
+  "author": "sjelfull",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "Show List and Detail",
+      "description": "Template for showing a static list and a detail view",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "hostname",
+      "type": "textfield",
+      "required": true,
+      "title": "Hostname",
+      "description": "URL of your Download Station instance",
+      "placeholder": "URL of your Download Station instance e.g. https://gitlab.com"
+    },
+    {
+      "name": "username",
+      "type": "textfield",
+      "required": true,
+      "title": "Username",
+      "description": "Your GitLab API token. `api` scope for read and write operations, `read_api` when you just want to read only commands.",
+      "link": "https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html",
+      "placeholder": "Enter your GitLab API token."
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "required": true,
+      "title": "Password",
+      "description": "Your GitLab API token. `api` scope for read and write operations, `read_api` when you just want to read only commands.",
+      "link": "https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html",
+      "placeholder": "Enter your GitLab API token."
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.56.3",
+    "@raycast/utils": "^1.9.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
